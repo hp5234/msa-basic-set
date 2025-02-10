@@ -1,9 +1,27 @@
+server:
+  port: 0
 spring:
   application:
     name: product-service
-server:
-  port: 19093
+  profiles:
+    active: local
+  config:
+    import: "configserver:"
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:19090/eureka/
+
+# /actuator/refresh 요청을 통한 프로파일 불러오기 활성화
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+message: "default message"

@@ -37,3 +37,10 @@
 3. /auth/signIn 를 통해 JWT 토큰을 발급
 4. 그 외 요청은 Authorization 헤더 토큰값(Bearer {tokenValue}) 을 넣어 요청 
 5. JWT 검증 기능이 추가된 게이트웨이가 인증 처리를 수행한다.
+
+### Config 서버 추가 
+- 각 프로젝트가 config 서버로부터 설정 파일을 받아오도록 변경 
+- config-service 에 설정 파일을 배치 시키고 설정 파일 수정 시 config-service 앱 재실행 
+- 각 service 에서는 설정파일에 설정된 active 항목을 보고 config-service 에 위치한 설정파을을 받아감 
+- 설정을 통해 각 service 에서는 /actuator/refresh 요청을 통해 config-service 에서 설정 파일을 다시 받아갈 수 있음 
+  - 이때 config-service 에 위치한 설정파일이 수정된 경우 config-service 를 재시작 해야 service 에서 받아가는 파일에 정상적으로 반영된다.
