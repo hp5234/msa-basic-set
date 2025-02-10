@@ -3,7 +3,7 @@
 - 서버디스커버리 : Eureka
 - 로드  밸런싱 : Ribbon
 - 서킷  브이커 : resilience4j
-- API GateWay
+- API GateWay : SpringCloud GateWay
 
 ### 실행 환경 구성 방법 
 - 인텔리제이 활용 
@@ -32,3 +32,6 @@
 4. **응답 처리**: 선택된 Product 인스턴스에서 응답을 받아 Order 서비스에 반환하고, 최종적으로 클라이언트에 응답을 전달합니다.
 
 ### 게이트웨이 추가 
+1. 게이트웨이가 모든 요청을 수신 (SpringCloud GateWay)
+2. 각 url 에 매칭되는 서버로 요청을 전달 
+3. 
