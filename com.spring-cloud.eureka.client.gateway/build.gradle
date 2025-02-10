@@ -28,6 +28,9 @@ ext {
 }
 
 dependencies {
+	// 토큰 검증 기능을 추가하기 위한 JWT 의존성 추가
+	implementation 'io.jsonwebtoken:jjwt:0.12.6'
+
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'

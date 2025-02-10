@@ -33,5 +33,7 @@
 
 ### 게이트웨이 추가 
 1. 게이트웨이가 모든 요청을 수신 (SpringCloud GateWay)
-2. 각 url 에 매칭되는 서버로 요청을 전달 
-3. 
+2. 각 url 에 매칭되는 서버로 요청을 전달
+3. /auth/signIn 를 통해 JWT 토큰을 발급
+4. 그 외 요청은 Authorization 헤더 토큰값(Bearer {tokenValue}) 을 넣어 요청 
+5. JWT 검증 기능이 추가된 게이트웨이가 인증 처리를 수행한다.
