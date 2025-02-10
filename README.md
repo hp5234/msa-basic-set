@@ -44,3 +44,8 @@
 - 각 service 에서는 설정파일에 설정된 active 항목을 보고 config-service 에 위치한 설정파을을 받아감 
 - 설정을 통해 각 service 에서는 /actuator/refresh 요청을 통해 config-service 에서 설정 파일을 다시 받아갈 수 있음 
   - 이때 config-service 에 위치한 설정파일이 수정된 경우 config-service 를 재시작 해야 service 에서 받아가는 파일에 정상적으로 반영된다.
+
+### Zipkin 을 통한 분산 추적 
+- order-service 가 product-service 를 호출하도록 구성 
+- 각 service 를 zipkin 으로 모니터링 
+- 이때 zipkin 은 별도로 구성해야한다. (Docker 를 통해 실행하는것을 추천)

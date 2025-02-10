@@ -23,5 +23,13 @@ management:
     web:
       exposure:
         include: refresh
+  # zipkin 을 위한 옵션 추가
+  zipkin:
+    tracing:
+      endpoint: "http://localhost:9411/api/v2/spans"
+  tracing:
+    sampling:
+      probability: 1.0
+
 
 message: "default message"
